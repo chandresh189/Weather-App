@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
-    "dev":"webpack-dev-server --mode development"
+    "dev": "webpack-dev-server --mode development"
   },
   "author": "hardik,bhanu",
   "license": "ISC",
@@ -16,7 +16,6 @@
     "axios": "^0.19.2",
     "babel-loader": "^8.1.0",
     "babel-polyfill": "^6.26.0"
-    
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

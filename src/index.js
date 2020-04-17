@@ -1,11 +1,13 @@
 var axios =require('axios');
 
+const Kelvin = 273;
+
  class Search {
     constructor(query) {
         this.query = query;
     }
     async getResults() {
-       
+
         var key2 = '3907c6dcd96299a0467c7c3404638c4f';
          var test2=`https://api.openweathermap.org/data/2.5/weather?q=${this.query}&appid=${key2}`;
       // var apiKey = "f810e1f4c0a0b046c1c42fb88130c7c9";
@@ -17,7 +19,7 @@ var axios =require('axios');
             console.log(this.result);
         } catch (error) {
             console.log(error);
-        }     
+        }
     }
 }
 const ids={
@@ -39,7 +41,7 @@ const viewResult=(result)=>{
    const main = result.data.main;
    const data = result.data;
    const coords = result.data.coord;
-   ids.temp.textContent = 'temprature -'+main.temp+'deg k';
+   ids.temp.textContent = 'temprature -'+Math.floor(main.temp-Kelvin)+'°C';
    ids.vis.textContent = 'visibility-'+ data.visibility;
    ids.windSpeed.textContent = 'wind speed-'+ data.wind.speed;
    ids.cityLoc.textContent = 'longitute-'+coords.lon + 'latitude -'+coords.lat;
@@ -62,5 +64,3 @@ ids.myForm.addEventListener('submit',newResult);
 //window.onload = (e)=>{
   // newResult(e);
 //}
-
-
